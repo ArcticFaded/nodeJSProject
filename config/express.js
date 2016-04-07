@@ -4,6 +4,7 @@ var config = require('./config'),
   compress = require('compression'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
+  db = require('mongoose'),
   session = require('express-session');
 
 

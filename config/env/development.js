@@ -1,3 +1,4 @@
 module.exports = {
-  sessionSecret: 'devSeshsecret'
+  sessionSecret: 'devSeshsecret',
+  db: 'mongodb://localhost/mean'
 };
