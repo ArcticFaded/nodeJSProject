@@ -10,4 +10,4 @@ module.exports = function(app) {
 
   app.param('userId', users.userByID);
 
-}
+};
