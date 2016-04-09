@@ -19,3 +19,20 @@ exports.list = function(req, res, next) {
          res.json(users);
 } });
 };
+
+exports.read = function(req, res){
+  res.json(req.user)
+};
+
+exports.userById = function(req, res, next, id){
+  User.findOne({
+    _id:"recordId"
+  }, function(err, user) {
+    if(err) {
+      return next (err);
+    } else {
+      req.user = user;
+      next();
+    }
+  });
+};
