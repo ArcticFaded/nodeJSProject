@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Javascript geo sample</title>
-	<script src="http://code.google.com/apis/gears/gears_init.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/geo.js?id=1" type="text/javascript" charset="utf-8"></script>
+  <title></title>
+  <script src="http://maps.google.com/maps/api/js"></script>
+  <script src="gmaps.js"></script>
+  <style type="text/css">
+    #map {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
 </head>
 <body>
-	<b>Javascript geo sample</b>
-	<script>
-		if(geo_position_js.init()){
-			geo_position_js.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true});
-		}
-		else{
-			alert("Functionality not available");
-		}
-
-		function success_callback(p)
-		{
-			alert('lat='+p.coords.latitude.toFixed(2)+';lon='+p.coords.longitude.toFixed(2));
-		}
-
-		function error_callback(p)
-		{
-			alert('error='+p.code);
-		}
-	</script>
-	</body>
+  <div id="map"></div>
+  <script>
+    var map = new GMaps({
+      el: '#map',
+      lat: -12.043333,
+      lng: -77.028333
+    });
+  </script>
+</body>
 </html>
