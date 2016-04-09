@@ -21,11 +21,16 @@ exports.list = function(req, res, next) {
 };
 
 exports.read = function(req, res){
-  res.json(req.user)
-  req.param.userId
+  var userId = req.params.userId;
+    User.find({_id: userId}, function(err, user) {
+        res.json(user);
+    })
+
+
 };
 
 exports.userById = function(req, res, next, id){
+
   User.findOne({
     _id:"recordId"
   }, function(err, user) {
