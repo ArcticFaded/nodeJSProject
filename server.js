@@ -5,7 +5,7 @@ var mongoose = require('./config/mongoose'),
 
 var db = mongoose();
 var app = express();
-app.listen(80);
+app.listen(3000);
 module.exports = app;
 
 console.log('SERVER RUNNING AT PORT 3000');

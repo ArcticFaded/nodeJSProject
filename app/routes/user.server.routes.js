@@ -5,9 +5,9 @@ module.exports = function(app) {
     .post(users.create)
     .get(users.list);
 
-  app.route('/user/:1')
+  app.route('/user/:userId')
     .get(users.read);
 
-  app.param('1', users.userByID);
+  // app.param('userId', users.userByID);
 
 };
