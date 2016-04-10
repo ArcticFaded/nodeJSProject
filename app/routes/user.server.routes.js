@@ -5,11 +5,17 @@ module.exports = function(app) {
     .post(users.create)
     .get(users.list);
 
+  app.route('/image')
+    .post(users.create_i)
+    .get(users.list_i);
+
   app.route('/decision')
     .get(users.renderDecision);
 
   app.route('/create1')
-    .get(users.renderCreate1);
+    .get(users.renderCreate1)
+    .post(users.create1);
+
 
   app.route('/create2')
     .get(users.renderCreate2);

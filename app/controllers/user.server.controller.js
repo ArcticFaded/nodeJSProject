@@ -1,6 +1,9 @@
 var User = require('mongoose').model('User');
   passport = require('passport');
 
+var Image = require('mongoose').model('Image')
+
+
 var getErrorMessage = function(err) {
   var message = '';
 
@@ -29,6 +32,30 @@ exports.renderDecision = function(req, res, next){
 exports.renderCreate1 = function(req, res, next){
   res.render('create1');
 }
+
+exports.create1 = function(req, res, next){
+  console.log(req.body);
+  var data = new Image(req.body);
+  /*var file = data.image;
+  	var filesSelected = file.files;
+    if (filesSelected.length > 0)
+    {
+            var fileToLoad = filesSelected[0];
+
+            var fileReader = new FileReader();
+
+            fileReader.onload = function(fileLoadedEvent) {
+            var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+            var newImage = document.createElement('img');
+            newImage.src = srcData;
+
+            data.Image = srcData;
+        }*/
+  return res.redirect('/create2');
+//}
+}
+
 exports.renderCreate2 = function(req, res, next){
   res.render('create2');
 }
@@ -107,6 +134,17 @@ exports.create = function(req, res, next){
   });
 };
 
+exports.create_i = function(req, res, next){
+  var user = new Image(req.body);
+  user.save(function(err){
+    if(err){
+      return next(err);
+    } else {
+      res.json(user);
+    }
+  });
+};
+
 exports.list = function(req, res, next) {
      User.find({}, function(err, users) {
        if (err) {
@@ -115,6 +153,16 @@ exports.list = function(req, res, next) {
          res.json(users);
 } });
 };
+
+exports.list_i = function(req, res, next) {
+     Image.find({}, function(err, users) {
+       if (err) {
+         return next(err);
+       } else {
+         res.json(users);
+} });
+};
+
 
 exports.read = function(req, res){
   var userId = req.params.userId;

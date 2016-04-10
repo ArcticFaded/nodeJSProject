@@ -4958,6 +4958,7 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+.form,
 .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;

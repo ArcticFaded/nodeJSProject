@@ -2,22 +2,7 @@ var mongoose = require('mongoose'),
     crypto = require('crypto'),
     Schema = mongoose.Schema;
 
-  var login = new Schema({
-    email: {
-      type: String,
-      match: [/.+\@.+\..+/, "Please fill a valid e-mail address"]
-    },  password: {
-       type: String,
-       validate: [
-         function(password){
-           return password && password.length > 6;
-         }, 'Password should be longer'
-       ]
-      }
-  });
-
-  
-   var UserSchema = new Schema({
+ var UserSchema = new Schema({
      firstName: String,
      lastName: String,
      email: {

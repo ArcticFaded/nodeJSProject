@@ -28,11 +28,11 @@
 
 
 
- <form>
+ <form action="/create1" method="post">
      <div id="name" class="input-group input-group-lg">
 
  <p><strong>Step 1.</strong> Enter a uniuque (but simple) password that you will share with your group to access the files you wish to share.</p>
-  <input id="passwordid" type="text" class="form-control" placeholder="Choose a password for your file" aria-describedby="sizing-addon1">
+  <input id="password" name="password" type="password" class="form-control" placeholder="Choose a password for your file" aria-describedby="sizing-addon1">
 
    <div class="btn-group" role="group">
 
@@ -44,11 +44,11 @@
     <div id="distance">
     	<form>
     		<select name="distance" ng-model="distance" style="background-color:white" >
-    			<option value="0"> Select one</option>
-    			<option value="1"> Share with my tabe (10 feet)</option>
-    			<option value="2"> Share with my room (500 feet)</option>
-    			<option value="3"> Share with my city (50 mile Radius)</option>
-    			<option value="4"> Share with my state (500 mile Radius</option>
+    			<option value="0" type = "radius"> Select one</option>
+    			<option value="1" type = "radius"> Share with my tabe (10 feet)</option>
+    			<option value="2" type = "radius"> Share with my room (500 feet)</option>
+    			<option value="3" type = "radius"> Share with my city (50 mile Radius)</option>
+    			<option value="4" type = "radius"> Share with my state (500 mile Radius</option>
     		</select>
     	</form>
     </div>
@@ -62,7 +62,40 @@
           <br/>
 
 
-   <input id="upload" type="file" name="file name" align="middle"/>
+   <input id="inputFile" type="file" name="hiddenValue" align="middle" onchange="encodeImageFileAsURL"/>
+	 <div id = "imgTest"></div>
+		<script type='text/javascript'>
+		var srcData = null;
+		function encodeImageFileAsURL(){
+
+    	var filesSelected = document.getElementById("inputFile").files;
+    	if (filesSelected.length > 0)
+    	{
+							var input = document.createElement('image');
+        			var fileToLoad = filesSelected[0];
+
+        			var fileReader = new FileReader();
+							input.type = 'hidden';
+        			fileReader.onload = function(fileLoadedEvent) {
+            	var srcData = fileLoadedEvent.target.result; // <--- data: base64
+							input.name = 'image';
+							input.value = srcData;
+
+
+							theForm.appendChild(input);
+							 document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+
+
+							//alert("Converted Base64 version is "+document.getElementById("upload").innerHTML);
+        	    //console.log("Converted Base64 version is "+document.getElementById("upload").innerHTML);
+      	  }
+
+  	  }
+			var TheForm = document.forms['image'];
+
+			theForm.submit();
+	}
+	</script>
    </div>
    <br/>
    <br/>
@@ -73,7 +106,7 @@
    </div>
 
     <div>
-    <button id="submit" type="button" class="btn btn-default">Submit</button>
+    <button id="submit" name = "image" type="submit" class="btn btn-default">Submit</button>
     </div>
     </div>
     </form>
