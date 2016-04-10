@@ -23,8 +23,12 @@ var getErrorMessage = function(err) {
   return message;
 };
 
+exports.renderDecision = function(req, res, next){
+  res.render('decision');
+}
+
 exports.renderSignin = function (req, res, next) {
-  
+
   if(!req.user) {
     res.render ('signin', {
       title: 'Sign-in Form',
