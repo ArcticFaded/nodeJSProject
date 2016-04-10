@@ -1,0 +1,26 @@
+.flash,
+.user-signup,
+.signup{
+  font-size: 15px;
+  font-family: sans-serif;
+  font-style: normal;
+}
+label{
+  font-size: 12px;
+  font-family: monospace;
+  font-style: normal;
+  font-weight: bold;
+}
+
+input{
+  font-size: 15px;
+  font-family: sans-serif;
+  font-style: normal;
+  width: 1000px;
+  height: 20px;
+}
+
+form{
+  width: 500px;
+  height: 500px;
+}

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title><%= title%></title>
-  <h1><%= name%></title>
-    <form action="/user" method="get">
-      First name: <input type="text" name="firstName"><br>
-      Last name: <input type="text" name="lastName"><br>
-    <input type="submit" value="Submit">
-</form>
-</body>
+<html lang = "en">
+  <head>
+    <title><%= title%></title>
+  </head>
+  <body>
+    <% if (userFullName) { %>
+      <h2>Hello<%=userFullName %></h2>
+      <a href="/signout">Sign Out</a>
+    <%} else { %>
+      <a href="/signup">Signup</a>
+      <a href="/signin">Signin</a>
+    <% } %>
+    <br>
+    <img src="img/logo.png" alt="logo"></img>
+  </body>
 </html>

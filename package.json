@@ -1,6 +1,6 @@
 {
   "name": "mean_app",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "first MEAN application",
   "main": "server.js",
   "dependencies": {
@@ -10,7 +10,11 @@
     "body-parser": "~1.8.0",
     "method-override": "~2.2.0",
     "express-session": "~1.7.6",
-    "ejs": "~1.0.0"
+    "ejs": "~1.0.0",
+    "connect-flash": "~0.1.1",
+    "mongoose": "~3.8.15",
+    "passport": "~0.2.1",
+    "passport-local": "~1.0.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -8,6 +8,7 @@ exports.render = function(req, res) {
 
 	res.render('index', {
 		title: 'Hello World',
-		name: 'Jonathan Beltran'
-	})
+		name: 'Jonathan Beltran',
+		userFullName: req.user ? req.user.fullName: ''
+	});
 };
