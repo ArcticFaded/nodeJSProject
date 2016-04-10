@@ -8,6 +8,18 @@ module.exports = function(app) {
   app.route('/decision')
     .get(users.renderDecision);
 
+  app.route('/create1')
+    .get(users.renderCreate1);
+
+  app.route('/create2')
+    .get(users.renderCreate2);
+
+  app.route('/grabbit1')
+    .get(users.renderGrabbit1);
+
+  app.route('/grabbit2')
+    .get(users.renderGrabbit2);
+
   app.route('/users/:userId')
     .get(users.read)
     .put(users.update)

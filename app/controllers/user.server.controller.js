@@ -26,6 +26,21 @@ var getErrorMessage = function(err) {
 exports.renderDecision = function(req, res, next){
   res.render('decision');
 }
+exports.renderCreate1 = function(req, res, next){
+  res.render('create1');
+}
+exports.renderCreate2 = function(req, res, next){
+  res.render('create2');
+}
+exports.renderGrabbit1 = function(req, res, next){
+  res.render('grabbit1');
+}
+exports.renderGrabbit2 = function(req, res, next){
+  res.render('grabbit2');
+}
+
+
+
 
 exports.renderSignin = function (req, res, next) {
 
