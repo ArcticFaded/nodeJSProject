@@ -36,22 +36,9 @@ exports.renderCreate1 = function(req, res, next){
 exports.create1 = function(req, res, next){
   console.log(req.body);
   var data = new Image(req.body);
-  /*var file = data.image;
-  	var filesSelected = file.files;
-    if (filesSelected.length > 0)
-    {
-            var fileToLoad = filesSelected[0];
-
-            var fileReader = new FileReader();
-
-            fileReader.onload = function(fileLoadedEvent) {
-            var srcData = fileLoadedEvent.target.result; // <--- data: base64
-
-            var newImage = document.createElement('img');
-            newImage.src = srcData;
-
-            data.Image = srcData;
-        }*/
+  /*
+  TODO: store file locally and have data record where that file is located
+  */
   return res.redirect('/create2');
 //}
 }
