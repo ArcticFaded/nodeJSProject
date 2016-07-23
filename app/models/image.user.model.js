@@ -7,9 +7,9 @@ var mongoose = require('mongoose'),
         type: Date,
         default: Date.now
       },
-      image       : Buffer,
-      radius      : Number,
-      password    : String,
+      image       : String,//will be a url to the location of the file
+      radius      : Number,//preset number for which to share the file
+      password    : String,//Not a strong password, no need for protection
   }, { strict: true });
 
 mongoose.model('Image', imageSchema);
