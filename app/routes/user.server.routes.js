@@ -30,9 +30,7 @@ module.exports = function(app) {
     .get(users.read)
     .put(users.update)
     .delete(users.delete);
-  //app.param('_Id', users.userByID);
-  //var userId = ;
-  //app.param('/userId',users.userByID);
+  
   app.route('/signup')
      .get(users.renderSignup)
      .post(users.signup);
